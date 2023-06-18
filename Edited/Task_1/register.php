@@ -34,9 +34,11 @@ if($sql->check_email($email)){
 
     if ($success) {
         $_SESSION['message_success-regester'] = "You can sign in now.";
+        header("Location: index.php");
+exit();
     } }else{
         
-        $_SESSION['message_check_email'] = "email exest inter another email";
+        $_SESSION['message_check_email'] = "Email is exest ... please Enter another email";
         header("Location: RegistrationPage.php");
 exit();
 
@@ -47,6 +49,5 @@ exit();
 }
 
 // Redirect to registration page or display error message
-header("Location: index.php");
-exit();
+
 ?>

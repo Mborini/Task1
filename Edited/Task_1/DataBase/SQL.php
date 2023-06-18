@@ -110,9 +110,9 @@ class SQL extends DB {
     public function check_email($email)
     {  $query = "SELECT * FROM users where email=$email";
         if ($query) { // if there is an error in the connection or if there is syntax error in the SQL.
-            return false;
+            return true;
     }
-else {return true;
+else {return false;
 }}
     public function insertUser($email, $hashedPassword, $phone, $role, $profile_picture) {
         $query = "INSERT INTO users (email, password, phone, role, profile_picture) VALUES (?, ?, ?, ?, ?)";
